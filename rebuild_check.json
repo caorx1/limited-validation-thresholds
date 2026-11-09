@@ -1,0 +1,9 @@
+{
+  "method_budget_cells": 6,
+  "numeric_comparisons": 108,
+  "tolerance": 1e-12,
+  "new_model_fits": 0,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1"
+}

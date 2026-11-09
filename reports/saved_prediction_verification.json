@@ -1,0 +1,13 @@
+{
+  "status": "PASS_SAVED_THRESHOLDS_AND_PREDICTIONS_ONLY",
+  "task_count": 45,
+  "macro_f1_checks": 82800,
+  "macro_f1_max_abs_error": 0.0,
+  "primary_paired_gain_checks": 27000,
+  "source_decision_disagreement_checks": 92,
+  "source_decision_disagreement_max_abs_error": 6.938893903907228e-17,
+  "new_fits": 0,
+  "new_threshold_searches": 0,
+  "v1_v2_reruns": 0,
+  "scope_limit": "Uses archived thresholds; does not verify threshold-search reproduction, training, or sensitivity re-execution."
+}

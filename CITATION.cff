@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this software and the original data sources when reusing these materials."
+type: software
+title: "Limited-validation threshold selection: cached-result verification"
+version: "0.1.0"
+authors:
+  - family-names: "CAO"
+    given-names: "RUIXIA"
+license: MIT

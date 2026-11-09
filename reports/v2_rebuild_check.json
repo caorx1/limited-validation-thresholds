@@ -1,0 +1,10 @@
+{
+  "operation": "reaggregate saved V2 task summaries",
+  "task_rows": 288,
+  "source_checks": 288,
+  "source_max_abs_error": 9.020562075079397e-17,
+  "configuration_checks": 160,
+  "configuration_max_abs_error": 1.1102230246251565e-16,
+  "new_model_fits": 0,
+  "new_threshold_searches": 0
+}
