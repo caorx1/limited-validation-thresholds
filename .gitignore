@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+results/local_*/
+reports/
+/rebuild_check.json
+/rebuilt_primary_summary.csv
