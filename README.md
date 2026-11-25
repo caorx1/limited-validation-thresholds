@@ -1,35 +1,42 @@
-# Limited-validation threshold selection: minimal verification package
+# Limited-validation threshold selection verification package
 
-Companion code for “Choosing classification thresholds with limited validation labels,” by Ruixia Cao.
+Local candidate version: **0.2.0-rc.1**
 
-## What is provided
+This package accompanies “Beyond mean gains: Evaluating classification threshold selection with limited validation labels,” by Ruixia Cao and Jieqiong Zheng. This is the paper’s author list. Software citation metadata is maintained separately in `CITATION.cff`.
 
-- The unchanged S1 empirical, S2 bootstrap-median and S3 grid threshold implementation; S0 is the fixed threshold 0.5.
-- Reduced caches for all 45 original source/model/outer-partition tasks: test probabilities, labels, final thresholds and test Macro-F1 values for the original eligible budgets. Redundant internal-bootstrap and validation records are omitted.
-- 27,000 primary paired gains and two frozen comparison tables. The code reconstructs mean gains and loss frequencies and checks source-level decision disagreement.
-- Saved V2 task and reference summaries for the two feature-inclusion comparisons and their equal-source combinations.
+## Materials
 
-## Run
+- The selector implementation for empirical maximization (S1), bootstrap median aggregation (S2), and the fixed grid (S3). The reference rule (S0) uses threshold 0.5.
+- Reduced caches for 45 fitted source, model, and partition tasks. They contain saved test probabilities, test labels, selected thresholds, and Macro-F1 values.
+- 27,000 paired primary gains and frozen source and equal-source summary tables.
+- Saved V2 task summaries, source summaries, and reference results for four information sets: original, PageValues only, Customer Value only, and both fields included.
 
-Tested with Python 3.12.14, NumPy 2.3.5 and pandas 3.0.1. These are observed working versions, not a certified fresh installation.
+## Run the checks
+
+The checks were exercised with Python 3.12.14, NumPy 2.3.5, and pandas 3.0.1 in an existing environment. A fresh installation has not been tested. Dependency pins are in `requirements.txt`.
+
+From the package root, run:
 
 ```text
-python -m pip install -r requirements.txt
 python code/verify_saved_predictions.py
 python code/rebuild_summaries.py
 python code/rebuild_v2.py
 ```
 
-The scripts also work from another current directory when invoked by their full paths. The first checks 82,800 Macro-F1 values, 27,000 paired gains and 92 disagreement summaries. The second checks 108 primary summary values. The third starts with 288 saved V2 task summaries, checks 288 source summary values and 160 equal-source configuration values, and writes the two rebuilt tables. Each script writes a record in `reports/`.
+Use standard Python execution because some checks rely on assertions. The scripts resolve their inputs relative to their own locations.
 
-Input checks and scientific comparisons use Python assertions: do not run with python -O. Comparing to provided reference tables checks consistency within the archived results; it does not independently establish the accuracy of source labels or model fitting.
+| Entry point | What it checks | Default outputs relative to the package root |
+|---|---|---|
+| `code/verify_saved_predictions.py` | Reconstructs decisions from saved probabilities and thresholds and checks 82,800 Macro-F1 values, 27,000 paired gains, and 92 source-level decision disagreement values. | `reports/saved_prediction_verification.json` |
+| `code/rebuild_summaries.py` | Reaggregates saved paired gains and checks 108 primary summary values. | `rebuilt_primary_summary.csv`, `rebuild_check.json` |
+| `code/rebuild_v2.py` | Starts with 288 saved V2 task summaries and checks 288 source summary values and 160 values across the four information-set configurations. | `reports/rebuilt_v2_source_metrics.csv`, `reports/rebuilt_information_set_sensitivity.csv`, `reports/v2_rebuild_check.json` |
 
-## Reproduction boundary
+Training, validation resampling, threshold searches, V1 execution, V2 execution from raw data, and complete figure reconstruction are outside the scope of these checks. The selector implementation is supplied for inspection.
 
-The scripts verify saved results. End-to-end fitting, validation sampling, bootstrap searches, V1 and figure generation are outside this package. V2 starts from saved summaries. The selector code is included for inspection.
+## Licensing and source attribution
 
-## Licensing and attribution
+See `LICENSE` for the MIT license for project code and documentation. See `DATA_LICENSE.md` for the stated CC BY 4.0 scope for project contributions to result tables and derived caches. Additional rights may apply. Preserve the original UCI attributions and the description of data processing in `DATA_SOURCES.md`. See `THIRD_PARTY_NOTICES.md` for dependencies.
 
-Project code/documentation: MIT, see LICENSE. Result CSV files and derived caches: CC BY 4.0, see DATA_LICENSE.md. Preserve original source attributions in DATA_SOURCES.md. No raw predictors, paper drafts, author replies, machine paths, credentials or internal review logs are included. Dependencies are installed separately, see THIRD_PARTY_NOTICES.md.
+## File integrity
 
-The source hashes in `cache_manifest.json` refer to the full experiment files. The reduced files have separate hashes. The `input_manifest.json` lists the files in this package before the verification scripts produce their reports.
+`cache_manifest.json` records reduced-cache hashes and the identities of the source experiment files. `input_manifest.json` records the fixed inputs and separately lists archived outputs that can be regenerated by the checks. The input manifest excludes itself.

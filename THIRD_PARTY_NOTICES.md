@@ -1,5 +1,5 @@
-# Code provenance and dependencies
+# Code and dependencies
 
-The three Python files under code/ are the project implementation, copied byte-for-byte from the checked local companion package. No GHOST, meta-learning, publisher figure, or other external research implementation is included. NumPy and pandas are installed separately; their distributions and their respective licenses are not replaced by this project's MIT license. No dependency source code or binary is vendored. Dataset rights and attribution are handled separately in DATA_LICENSE.md and DATA_SOURCES.md.
+The package includes four Python files under `code/`. The selector implementation, `threshold_budget_v1_1.py`, is supplied for inspection. The three verification entry points are `verify_saved_predictions.py` for saved predictions, `rebuild_summaries.py` for primary summaries, and `rebuild_v2.py` for aggregation of saved V2 summaries.
 
-The threshold implementation is supplied for method inspection. Its inclusion is not evidence of a new algorithm, full re-execution of threshold searches, or independent model reproduction.
+NumPy and pandas are separate dependencies. Their distributions and licenses remain distinct from the project’s MIT license. The package contains no bundled dependency code or binaries and no external research implementations or publisher figures. See `DATA_LICENSE.md` and `DATA_SOURCES.md` for the scope of the data license and the original source attributions.

@@ -1,9 +1,41 @@
 {
+  "candidate_version": "0.2.0-rc.1",
+  "scope": "Fixed package inputs, reference data, documentation and inherited archive records. Generated outputs are listed separately. This manifest does not list itself.",
   "files": [
     {
       "path": ".gitignore",
       "bytes": 118,
       "sha256": "270be59a58a21f0987d9bbbe6ae100962d91516dd8bc23fe89f658ce30d28587"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 310,
+      "sha256": "1410c4cd892c6d0f17563abc87760741cb1c982775b1dca991ccc9342278c639"
+    },
+    {
+      "path": "DATA_LICENSE.md",
+      "bytes": 693,
+      "sha256": "f32a42ac56c8e680ce2be8d711f96744341427283ebea8a7ec67afef80c0ac1c"
+    },
+    {
+      "path": "DATA_SOURCES.md",
+      "bytes": 2115,
+      "sha256": "671f0d25d18c2a0db4d28a84b7bac9fb0a8de1d26d4a29944aad7faf75177dce"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1088,
+      "sha256": "5fa424cfff94363dc182cf2969f011637d0ddc3fea0612d7438abfc8afc8a3cc"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3164,
+      "sha256": "86caa7c7c2518f9a0c2eb78ae8428dfa8bd10c13e5a4f69298e5a74c75226063"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 729,
+      "sha256": "745dfb92f2a59bc200acfc6f0b2d8258673462ada2784254ed10d9854ed87ff8"
     },
     {
       "path": "cache/default_credit__20260925__hist_gradient_boosting.json",
@@ -236,11 +268,6 @@
       "sha256": "b664f80548772ef5efa23f9c7a30a13374c00fdc529e3f9f3ae259a17c1b23c7"
     },
     {
-      "path": "CITATION.cff",
-      "bytes": 305,
-      "sha256": "37eb21ab612f05216ce4b9da4495ee60afcbb4596fdf7303d400fb7ee71400b4"
-    },
-    {
       "path": "code/rebuild_summaries.py",
       "bytes": 1872,
       "sha256": "4ab15a948f6082d2c52002a2c8410987e7aed0a2265dfe6dc29b8ed96fee91fe"
@@ -259,36 +286,6 @@
       "path": "code/verify_saved_predictions.py",
       "bytes": 3931,
       "sha256": "a04643cdb200393bdbb77406eb1135c367b44ac89185078dd162e0a9d4cf6413"
-    },
-    {
-      "path": "DATA_LICENSE.md",
-      "bytes": 693,
-      "sha256": "f32a42ac56c8e680ce2be8d711f96744341427283ebea8a7ec67afef80c0ac1c"
-    },
-    {
-      "path": "DATA_SOURCES.md",
-      "bytes": 2115,
-      "sha256": "671f0d25d18c2a0db4d28a84b7bac9fb0a8de1d26d4a29944aad7faf75177dce"
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 1088,
-      "sha256": "5fa424cfff94363dc182cf2969f011637d0ddc3fea0612d7438abfc8afc8a3cc"
-    },
-    {
-      "path": "README.md",
-      "bytes": 2738,
-      "sha256": "026142cb8fec9f574ac8d22fef518990beb14fe91aaa30c2fecfa5709e8b21e6"
-    },
-    {
-      "path": "rebuild_check.json",
-      "bytes": 177,
-      "sha256": "a35826bb9d76572b202554f20139fe3edc84704cfdb2cf480557d19cae4e52ca"
-    },
-    {
-      "path": "rebuilt_primary_summary.csv",
-      "bytes": 449,
-      "sha256": "d0013f056dbf6c61ab37d0582f2120eb5380633cd3657d1c90ebf7afe5afac46"
     },
     {
       "path": "requirements.txt",
@@ -339,11 +336,38 @@
       "path": "tables/primary_budget_paired_draws.csv",
       "bytes": 1825537,
       "sha256": "a758ebd35f75bc106afeb7b650b71ea96bec7fc57634ed4a42bd6dc182f6552e"
+    }
+  ],
+  "archived_generated_outputs": [
+    {
+      "path": "rebuild_check.json",
+      "bytes": 177,
+      "sha256": "a35826bb9d76572b202554f20139fe3edc84704cfdb2cf480557d19cae4e52ca"
     },
     {
-      "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 744,
-      "sha256": "23414e60e54afa9e09abb8cc6199eb504ab1507e3a5d1b1da218065b3eff05e1"
+      "path": "rebuilt_primary_summary.csv",
+      "bytes": 449,
+      "sha256": "d0013f056dbf6c61ab37d0582f2120eb5380633cd3657d1c90ebf7afe5afac46"
+    },
+    {
+      "path": "reports/rebuilt_information_set_sensitivity.csv",
+      "bytes": 3426,
+      "sha256": "c958456b7bd5ab1a465dcd8c43a129f52e255273cec4fb084d1a6d959e45bee0"
+    },
+    {
+      "path": "reports/rebuilt_v2_source_metrics.csv",
+      "bytes": 6040,
+      "sha256": "d4180746cf273bab426be27bcc8c7c27ba2bb2b14f1ed97ae19a07e81910c3b1"
+    },
+    {
+      "path": "reports/saved_prediction_verification.json",
+      "bytes": 509,
+      "sha256": "be8706289c8d510c83a77ba074996396990df45d4739f9d40993ced177bafbdb"
+    },
+    {
+      "path": "reports/v2_rebuild_check.json",
+      "bytes": 302,
+      "sha256": "9ad79f03a838a8c00a3fb2370fd685cbc0a3b53a48c06a6b1782806a69ce968a"
     }
   ]
 }
